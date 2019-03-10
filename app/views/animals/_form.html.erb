@@ -1,0 +1,18 @@
+<%= form_for animal do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+
+  <%= f.label :sex %>
+  <%= f.select :sex, ["male", "female"] %>
+
+  <%= f.label :facility_id %>
+  <%= f.select :facility_id, Facility.all.pluck(:name, :id)%>
+
+  <%= f.label :category_id %>
+  <%= f.select :category_id, Category.all.pluck(:species, :id)%>
+
+  <%= f.submit %>
+<% end %>

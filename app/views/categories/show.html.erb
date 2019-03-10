@@ -1,0 +1,7 @@
+<h1> <%= category.species %> </h1>
+
+<ul>
+  <% animals.each do |animal| %>
+    <li><%= link_to animal.name, animal_path(animal.id) %></li>
+  <% end %>
+</ul>
